@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FabriConn AI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a class="logo" href="#home">FabriConn <span>AI</span></a>
+      <nav id="navLinks" class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#find-tailors">Find Tailors</a>
+        <a href="#fabric-shops">Fabric Shops</a>
+        <a href="#services">Services</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#impact">Impact</a>
+        <button id="loginBtn" class="btn btn-outline">Login / Signup</button>
+      </nav>
+      <button id="hamburger" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Home / Hero -->
+    <section id="home" class="section hero">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h1>Your Wardrobe’s Second Chance</h1>
+          <p>Connect with tailors & fabric shops near you. Repair, upcycle, and save the planet.</p>
+          <a href="#find-tailors" class="btn btn-primary">Find a Tailor</a>
+
+          <div class="features">
+            <div class="feature"><span class="icon">✂️</span> Tailors near you</div>
+            <div class="feature"><span class="icon">🧵</span> Fabric shops + deadstock</div>
+            <div class="feature"><span class="icon">🌍</span> Sustainable choices</div>
+          </div>
+        </div>
+
+        <div class="hero-visuals">
+          <!-- Doodle: tailor at sewing machine (simple inline SVG) -->
+          <svg class="doodle" viewBox="0 0 250 180" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="20" y="120" width="210" height="8" rx="4"></rect>
+              <circle cx="100" cy="95" r="18"></circle>
+              <rect x="85" y="80" width="60" height="30" rx="6"></rect>
+              <line x1="145" y1="85" x2="190" y2="85"></line>
+              <rect x="190" y="75" width="30" height="20" rx="4"></rect>
+              <path d="M95 112 q5 12 18 12 h8"></path>
+              <circle cx="118" cy="70" r="4"></circle>
+              <path d="M60 130 q15 -40 35 -35"></path>
+            </g>
+          </svg>
+
+          <!-- Map illustration connecting nodes -->
+          <div class="map-illustration">
+            <div class="node customer">You</div>
+            <div class="node tailor">Tailor</div>
+            <div class="node shop">Shop</div>
+            <svg class="map-lines" viewBox="0 0 300 180" preserveAspectRatio="none">
+              <line x1="60" y1="90" x2="150" y2="40" />
+              <line x1="60" y1="90" x2="240" y2="120" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Find Tailors -->
+    <section id="find-tailors" class="section">
+      <div class="section-head">
+        <h2>Find Tailors</h2>
+        <p>Search by location or skill (blouse stitching, kurta, alteration…)</p>
+      </div>
+
+      <div class="searchbar">
+        <input id="tailorSearch" type="text" placeholder="Search by location or skill…" />
+      </div>
+
+      <div id="tailorList" class="card-grid"></div>
+    </section>
+
+    <!-- Fabric Shops -->
+    <section id="fabric-shops" class="section">
+      <div class="section-head">
+        <h2>Fabric Shops</h2>
+        <p>Discover fabrics, deadstock deals, and more.</p>
+      </div>
+
+      <div id="shopList" class="card-grid"></div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+      <div class="section-head">
+        <h2>Services</h2>
+      </div>
+      <div class="services-grid">
+        <div class="svc">
+          <div class="svc-icon">🪡</div>
+          <h3>Alterations</h3>
+          <p>Perfect fitting for your favorite outfits.</p>
+        </div>
+        <div class="svc">
+          <div class="svc-icon">♻️</div>
+          <h3>Upcycling</h3>
+          <p>Give old clothes a new life.</p>
+        </div>
+        <div class="svc">
+          <div class="svc-icon">✨</div>
+          <h3>Custom Orders</h3>
+          <p>Get something made just for you.</p>
+        </div>
+        <div class="svc">
+          <div class="svc-icon">🔄</div>
+          <h3>Repairs</h3>
+          <p>Fix zippers, buttons, and tears easily.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="section alt">
+      <div class="section-head">
+        <h2>How It Works</h2>
+      </div>
+      <ol class="hiw">
+        <li><strong>Search:</strong> Find nearby tailors and fabric shops.</li>
+        <li><strong>Book:</strong> Choose a service and confirm a time.</li>
+        <li><strong>Track:</strong> Get updates until your order is done.</li>
+      </ol>
+    </section>
+
+    <!-- Impact -->
+    <section id="impact" class="section">
+      <div class="section-head">
+        <h2>Impact</h2>
+        <p>Tiny actions, big planet wins.</p>
+      </div>
+      <div class="impact-cards">
+        <div class="impact-card">
+          <div class="impact-num" id="statOrders">0</div>
+          <div class="impact-label">Orders Completed</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-num" id="statClothes">0</div>
+          <div class="impact-label">Clothes Saved from Landfill</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-num" id="statCO2">0</div>
+          <div class="impact-label">kg CO₂e Avoided</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard (after login) -->
+    <section id="dashboard" class="section" hidden>
+      <div class="section-head with-tabs">
+        <h2>Dashboard</h2>
+        <div class="tabs" role="tablist" aria-label="Dashboard roles">
+          <button class="tab active" data-tab="tailor">Tailor</button>
+          <button class="tab" data-tab="shop">Shop</button>
+          <button class="tab" data-tab="customer">Customer</button>
+        </div>
+      </div>
+
+      <!-- Tailor Dashboard -->
+      <div class="dash-panel" data-content="tailor">
+        <div class="grid-2">
+          <div class="card">
+            <h3>New Orders</h3>
+            <ul id="tailorOrders" class="list"></ul>
+          </div>
+          <div class="card kpis">
+            <div>
+              <div class="kpi-label">Earnings this month</div>
+              <div class="kpi-value">₹<span id="earnings">12,000</span></div>
+            </div>
+            <div>
+              <div class="kpi-label">Customer Ratings</div>
+              <div class="kpi-value">⭐ <span id="rating">4.5</span></div>
+            </div>
+            <div>
+              <div class="kpi-label">Profile</div>
+              <div class="profile">
+                <div class="avatar">RS</div>
+                <div>
+                  <strong id="profileName">Rani Sharma</strong>
+                  <div class="muted">Repairs • Custom Blouse • Alterations</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shop Dashboard -->
+      <div class="dash-panel" data-content="shop" hidden>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Upload Deadstock Fabrics</h3>
+            <form id="deadstockForm" class="stack">
+              <input type="text" name="name" placeholder="Fabric name (e.g., Cotton Poplin)" required />
+              <input type="number" name="price" placeholder="Price per meter (₹)" required />
+              <input type="number" name="discount" placeholder="Discount (%)" min="0" max="90" />
+              <button class="btn btn-primary" type="submit">Upload</button>
+            </form>
+            <ul id="deadstockList" class="list compact"></ul>
+          </div>
+          <div class="card">
+            <h3>Revenue Growth</h3>
+            <canvas id="revenueChart" width="600" height="280" aria-label="Shop revenue chart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Customer Dashboard -->
+      <div class="dash-panel" data-content="customer" hidden>
+        <div class="grid-2">
+          <div class="card">
+            <h3>My Past Orders</h3>
+            <ul id="pastOrders" class="list"></ul>
+          </div>
+          <div class="card">
+            <h3>Fit Passport</h3>
+            <ul class="list compact">
+              <li>Chest: 34"</li>
+              <li>Waist: 28"</li>
+              <li>Hip: 36"</li>
+              <li>Sleeve: 22"</li>
+            </ul>
+            <h3 class="mt">Sustainability Score</h3>
+            <p class="big-score"><span id="sustScore">78</span>/100</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <div class="logo small">FabriConn <span>AI</span></div>
+        <p class="muted">Engineering India’s hyperlocal circular fashion ecosystem.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Social</h4>
+        <ul>
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+          <li><a href="#" aria-label="YouTube">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© <span id="year"></span> FabriConn AI</div>
+  </footer>
+
+  <!-- Modal -->
+  <dialog id="appModal">
+    <form method="dialog" class="modal">
+      <h3 id="modalTitle">Action</h3>
+      <p id="modalBody">…</p>
+      <div class="modal-actions">
+        <button value="cancel" class="btn btn-outline">Close</button>
+        <button value="ok" class="btn btn-primary">OK</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
